@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home_final.css')}}" />
+    <script src="https://kit.fontawesome.com/87275b59ab.js" crossorigin="anonymous"></script>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no maximum-scale=1.0, minimum-scale=1.0" >
+    <link href="https://fonts.googleapis.com/css?family=Jua&amp;display=swap" rel="stylesheet">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <section id="title">
+        <h1 class="d-felx justify-content-center"><strong>NBA Who Am I</strong></h1>
+        <h2 class="d-felx justify-content-center">2000명을 넘어가는 역대 NBA선수중 당신과 가장 닮은 선수를 찾아보세요!</h2>
+    </section>
+    <!-- multistep form -->
+    <section class="d-felx justify-content-center" id="formbox">
+        <div id="container">
+            <form  id="msform" action="/claculate" method="post">
+                <!-- progressbar -->
+                <ul id="progressbar" class="d-felx justify-content-center">
+                    <li class="active ">Step 1</li>
+                    <li>Step 2</li>
+                    <li>Step 3</li>
+                    <li>Step 4</li>
+                    <li>Step 5</li>
+                    <li>Step 6</li>
+                    <li>Step 7</li>
+                </ul>
+                <!-- fieldsets -->
+                <fieldset>
+                    <h2 class="fs-title">Q.당신의 키를 알려주세요</h2>
+                    <h3 class="fs-subtitle">CM단위로 알려주세요</h3>
+                    <h3 class="fs-subtitle"></h3>
+                    <input type="text" name="Hight" size="12" maxlength="3" id="hight">
+                    <div class="eximg"><img src="{{ url_for('static', filename='img/layup2.jpg')}}"  style="opacity: 0;"></div>
+                    <input type="button" name="next" class="next action-button" value="Next" />
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">Q.근접슛은 얼마나 잘들어가나요?</h2>
+                    <h3 class="fs-subtitle">회색으로 표시된 부분에서의 얼마나 들어가나요?</h3>
+                    <div role="radiogroup" class="decision d-felx justify-content-center">
+                        <div class="caption miss">거의 안들어간다</div>
+                        <div class="option">
+                            <div class="check" id="E">
+                                <input class="bad big" id="Field3_1" name="Cls" type="radio" value="E" />
+                                <label for="Field3_1"></label>
+                            </div>
+                            <div class="check" id="D">
+                                <input class="bad mid" id="Field3_2" name="Cls" type="radio" value="D" />
+                                <label for="Field3_2"></label>
+                            </div>
+                            <div class="check" id="C">
+                                <input class="small" id="Field3_3" name="Cls" type="radio" value="C" checked />
+                                <label for="Field3_3"></label>
+                            </div>
+                            <div class="check" id="B">
+                                <input class="good mid" id="Field3_4" name="Cls" type="radio" value="B" />
+                                <label for="Field3_4"></label>
+                            </div>
+                            <div class="check" id="A">
+                                <input class="good big" id="Field3_5" name="Cls" type="radio" value="A" />
+                                <label for="Field3_5"></label>
+                            </div>
+                        </div>
+                        <div class="caption got">거의 다들어간다</div>
+                    </div>
+                    <div class="eximg"><img src="{{ url_for('static', filename='img/Cls.png')}}" ></div>
+                    <input type="button" name="previous" class="previous action-button" value="Previous" />
+                    <input type="button" name="next" class="next action-button" value="Next" />
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">Q.미드레인지는 얼마나 잘들어가나요?</h2>
+                    <h3 class="fs-subtitle">회색으로 표시된 부분에서의 얼마나 들어가나요?</h3>
+                    <div role="radiogroup" class="decision d-felx justify-content-center">
+                        <div class="caption miss">거의 안들어간다</div>
+                        <div class="option">
+                            <div class="check" id="E">
+                                <input class="bad big" id="Field4_1" name="Med" type="radio" value="E" />
+                                <label for="Field4_1"></label>
+                            </div>
+                            <div class="check" id="D">
+                                <input class="bad mid" id="Field4_2" name="Med" type="radio" value="D" />
+                                <label for="Field4_2"></label>
+                            </div>
+                            <div class="check" id="C">
+                                <input class="small" id="Field4_3" name="Med" type="radio" value="C" checked />
+                                <label for="Field4_3"></label>
+                            </div>
+                            <div class="check" id="B">
+                                <input class="good mid" id="Field4_4" name="Med" type="radio" value="B" />
+                                <label for="Field4_4"></label>
+                            </div>
+                            <div class="check" id="A">
+                                <input class="good big" id="Field4_5" name="Med" type="radio" value="A" />
+                                <label for="Field4_5"></label>
+                            </div>
+                        </div>
+                        <div class="caption got">거의 다들어간다</div>
+                    </div>
+                    <div class="eximg"><img src="{{ url_for('static', filename='img/Med.png')}}" ></div>
+                    <input type="button" name="previous" class="previous action-button" value="Previous" />
+                    <input type="button" name="next" class="next action-button" value="Next" />
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">Q.3점은 얼마나 잘들어가나요?</h2>
+                    <h3 class="fs-subtitle">회색으로 표시된 부분에서의 얼마나 들어가나요?</h3>
+                    <div role="radiogroup" class="decision d-felx justify-content-center">
+                        <div class="caption miss">거의 안들어간다</div>
+                        <div class="option">
+                            <div class="check" id="E">
+                                <input class="bad big" id="Field5_1" name="Tpt" type="radio" value="E" />
+                                <label for="Field5_1"></label>
+                            </div>
+                            <div class="check" id="D">
+                                <input class="bad mid" id="Field5_2" name="Tpt" type="radio" value="D" />
+                                <label for="Field5_2"></label>
+                            </div>
+                            <div class="check" id="C">
+                                <input class="small" id="Field5_3" name="Tpt" type="radio" value="C" checked />
+                                <label for="Field5_3"></label>
+                            </div>
+                            <div class="check" id="B">
+                                <input class="good mid" id="Field5_4" name="Tpt" type="radio" value="B" />
+                                <label for="Field5_4"></label>
+                            </div>
+                            <div class="check" id="A">
+                                <input class="good big" id="Field5_5" name="Tpt" type="radio" value="A" />
+                                <label for="Field5_5"></label>
+                            </div>
+                        </div>
+                        <div class="caption got">거의 다들어간다</div>
+                    </div>
+                    <div class="eximg"><img src="{{ url_for('static', filename='img/Tpt.png')}}" ></div>
+                    <input type="button" name="previous" class="previous action-button" value="Previous" />
+                    <input type="button" name="next" class="next action-button" value="Next" />
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">Q.견제상황에서 마무리능력이 얼마나 좋나요?</h2>
+                    <h3 class="fs-subtitle">여러수비수가 붙었을때 골밑에서 레이업이나 슛을 성공시킬수 있나요?</h3>
+                    <div role="radiogroup" class="decision d-felx justify-content-center">
+                        <div class="caption miss">거의 안들어간다</div>
+                        <div class="option">
+                            <div class="check" id="E">
+                                <input class="bad big" id="Field6_1" name="finish" type="radio" value="E" />
+                                <label for="Field6_1"></label>
+                            </div>
+                            <div class="check" id="D">
+                                <input class="bad mid" id="Field6_2" name="finish" type="radio" value="D" />
+                                <label for="Field6_2"></label>
+                            </div>
+                            <div class="check" id="C">
+                                <input class="small" id="Field6_3" name="finish" type="radio" value="C" checked />
+                                <label for="Field6_3"></label>
+                            </div>
+                            <div class="check" id="B">
+                                <input class="good mid" id="Field6_4" name="finish" type="radio" value="B" />
+                                <label for="Field6_4"></label>
+                            </div>
+                            <div class="check" id="A">
+                                <input class="good big" id="Field6_5" name="finish" type="radio" value="A" />
+                                <label for="Field6_5"></label>
+                            </div>
+                        </div>
+                        <div class="caption got">거의 다들어간다</div>
+                    </div>
+                    <div class="eximg"><img src="{{ url_for('static', filename='img/layup2.jpg')}}" ></div>
+                    <input type="button" name="previous" class="previous action-button" value="Previous" />
+                    <input type="button" name="next" class="next action-button" value="Next" />
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">Q.당신의 기술 능력치는 얼마나 되나요?</h2>
+                    <h3 class="fs-subtitle">킥아웃 패스,킬패스등의 패스나 페이드어웨이같은 고난이도 기술을 사용가능 합니까?</h3>
+                    <div role="radiogroup" class="decision d-felx justify-content-center">
+                        <div class="caption miss">거의 못한다</div>
+                        <div class="option">
+                            <div class="check" id="E">
+                                <input class="bad big" id="Field7_1" name="technic" type="radio" value="E" />
+                                <label for="Field7_1"></label>
+                            </div>
+                            <div class="check" id="D">
+                                <input class="bad mid" id="Field7_2" name="technic" type="radio" value="D" />
+                                <label for="Field7_2"></label>
+                            </div>
+                            <div class="check" id="C">
+                                <input class="small" id="Field7_3" name="technic" type="radio" value="C" checked />
+                                <label for="Field7_3"></label>
+                            </div>
+                            <div class="check" id="B">
+                                <input class="good mid" id="Field7_4" name="technic" type="radio" value="B" />
+                                <label for="Field7_4"></label>
+                            </div>
+                            <div class="check" id="A">
+                                <input class="good big" id="Field7_5" name="technic" type="radio" value="A" />
+                                <label for="Field7_5"></label>
+                            </div>
+                        </div>
+                        <div class="caption got">거의 다한다</div>
+                    </div>
+                    <div class="eximg"><img src="{{ url_for('static', filename='img/fade away2.jpg')}}" ></div>
+                    <input type="button" name="previous" class="previous action-button" value="Previous" />
+                    <input type="button" name="next" class="next action-button" value="Next" />
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">Q.당신의 수비능력은 얼마나 좋나요?</h2>
+                    <h3 class="fs-subtitle">매치업의 공격수를 얼마나 잘막을수 있나요?</h3>
+                    <div role="radiogroup" class="decision d-felx justify-content-center">
+                        <div class="caption miss">거의 못막는다</div>
+                        <div class="option">
+                            <div class="check" id="E">
+                                <input class="bad big" id="Field8_1" name="defence" type="radio" value="E" />
+                                <label for="Field8_1"></label>
+                            </div>
+                            <div class="check" id="D">
+                                <input class="bad mid" id="Field8_2" name="defence" type="radio" value="D" />
+                                <label for="Field8_2"></label>
+                            </div>
+                            <div class="check" id="C">
+                                <input class="small" id="Field8_3" name="defence" type="radio" value="C" checked />
+                                <label for="Field8_3"></label>
+                            </div>
+                            <div class="check" id="B">
+                                <input class="good mid" id="Field8_4" name="defence" type="radio" value="B" />
+                                <label for="Field8_4"></label>
+                            </div>
+                            <div class="check" id="A">
+                                <input class="good big" id="Field8_5" name="defence" type="radio" value="A" />
+                                <label for="Field8_5"></label>
+                            </div>
+                        </div>
+                        <div class="caption got">거의 다막는다</div>
+                    </div>
+                    <div class="eximg"><img src="{{ url_for('static', filename='img/defence.jpg')}}" ></div>
+                    <input type="button" name="previous" class="previous action-button" value="Previous" />
+                    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+                </fieldset>
+            </form>
+        </div>
+
+    </section>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+    <script src="{{ url_for('static', filename='javascript/home_final.js')}}"></script>
+</body>
+
+</html>

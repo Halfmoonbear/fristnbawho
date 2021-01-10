@@ -1,0 +1,371 @@
+.decision {
+	margin-top: 5.625rem;
+	position: relative;
+	display: flex;
+	background: none;
+}
+
+.caption{
+	font-size: 1.5625rem;
+	font-weight: 500;
+
+}
+
+.miss {
+	color: #674356;
+	/* font-weight: bold; */
+}
+
+.got {
+	color: #56ac8a;
+	/* font-weight: bold; */
+}
+
+.option {
+	display: inline-flex;
+	background-color: none;
+	align-items: center;
+	flex-flow: row;
+}
+
+input[type="radio"]+label {
+	display: inline-block;
+	margin: 0.9375rem;
+	/* background: tomato; */
+	color: #9b9faa;
+	-moz-transition: 0.3s;
+	-o-transition: 0.3s;
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+}
+
+input[type="radio"].bad+label {
+	color: #674356;
+}
+
+input[type="radio"].good+label {
+	color: #56ac8a;
+}
+
+input[type="radio"] {
+	display: none;
+	position: absolute;
+	clip: rect(0, 0, 0, 0);
+	clip: rect(0 0 0 0);
+}
+
+input[type="radio"]:hover,
+input[type="radio"]:focus,
+input[type="radio"]:hover+label,
+input[type="radio"]:focus+label {
+	border-color: #D3D3D3;
+	color: #D3D3D3;
+}
+
+input[type="radio"]:checked+label {
+	color: #D3D3D3;
+}
+
+input[type="radio"]+label::before {
+	-moz-transition: 0.3s;
+	-o-transition: 0.3s;
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+}
+
+input[type="radio"]:checked+label::before {
+	border-color: #D3D3D3;
+}
+
+
+.check input.big+label {
+	font-size: 4.6875rem;
+}
+
+.check input.mid+label {
+	font-size: 3.75rem;
+}
+
+.check input.small+label {
+	font-size: 2.5rem;
+}
+
+.check input+label::before {
+	content: '\f111';
+	font-family: 'Font Awesome 5 Free';
+	/* font-weight: 900; */
+	width: auto;
+	height: auto;
+	margin-right: 0;
+	border: none;
+	position: relative;
+	top: none;
+	display: inline-block;
+	background: transparent;
+}
+
+.check input:checked+label::before {
+	content: '\f111';
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	background: transparent;
+}
+
+/* --------------------------------------------------------------------------- */
+h1 {
+	font-size: 6.25rem;
+
+
+}
+
+.justify-content-center {
+    /* -ms-flex-pack: center!important; */
+    justify-content: center!important;
+}
+
+.d-flex {
+    /* display: -ms-flexbox!important; */
+    display: flex!important;
+}
+
+
+
+#title {
+	position: relative;
+	/* width: 56.25rem; */
+	/* background-color: #dc3545; */
+	text-align: center;
+	top: 50%;
+	/* left: 50%; */
+	margin-top: 6.25rem;
+	margin-bottom: 6.25rem;
+	line-height: 900%;
+	/* margin-left: -28.13rem; */
+	/* margin-left: 9.375rem; */
+	/* padding-bottom: 0rem;
+	line-height: 900%;
+	display: table; 
+	margin-left: auto; 
+	margin-right: auto; 
+	margin-top: 6.25rem; */
+}
+
+#formbox{
+	position: relative;
+	display: flex;
+
+}
+#container {
+	/* position: relative; */
+	width: max-content;
+	/* height: max-content; */
+	background-color: #f6f7fa;
+	border-inline: none;
+	border: 0 none;
+	border-radius: 0.1875rem;
+	height: 62.5rem;
+	top: 50%;
+	padding: 5% 3%;
+	/* left: 50%; */
+	/* margin-top: 0rem; */
+	margin: 0 auto;
+	/* margin-left: -28.13rem; */
+}
+
+/* ------------------------------------------------------------------- */
+/*custom font*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+/* * {
+	margin: 0;
+	padding: 0;
+} */
+
+html {
+	height: max-content;
+	/*Image only BG fallback*/
+
+	/*background = gradient + image pattern combo*/
+	/* background: */
+		/* linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6)) */
+		/* linear-gradient(#4781be, rgba(196, 102, 0, 0.6)); */
+
+	background: #4781be ;	
+	/* #dc3545 #27AE60 #4781be */
+}
+
+body {
+	/* font-family: montserrat, arial, verdana; */
+	font-family: 'Jua', sans-serif;
+}
+
+img{
+	max-height:28.125rem;
+	border:3;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/*form styles*/
+#msform {
+	width: 60rem;
+	/* width: auto; */
+	/* padding: 3% 0; */
+	/* margin: 3.125rem auto; */
+	text-align: center;
+	position: relative;
+
+
+}
+
+#msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 0.1875rem;
+	box-shadow: 0 0 0.9375rem 0.0625rem rgba(0, 0, 0, 0.4);
+	/* padding: 1.25rem 1.875rem; */
+	box-sizing: border-box;
+	width: 90%;
+	/* height: 1000%; */
+	margin: 0% 5%;
+
+	/*stacking fieldsets above each other*/
+	position: relative;
+}
+
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+
+/*inputs*/
+#msform input,
+#msform textarea {
+	padding: 0.9375rem;
+	border: 0.0625rem solid #ccc;
+	border-radius: 0.1875rem;
+	margin-top: 5rem;
+	margin-bottom: 3.125rem;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 1.25rem;
+	font-weight: 900;
+}
+
+#hight{
+	text-align: center;
+
+}
+
+
+/*buttons*/
+#msform .action-button {
+	width: 6.25rem;
+	background: #dc3545;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 0.0625rem;
+	cursor: pointer;
+	padding: 0.625rem 0.3125rem;
+	margin: 0.625rem 0.3125rem;
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+	box-shadow: 0 0 0 0.125rem white, 0 0 0 0.1875rem #dc3545;
+}
+
+/*headings*/
+.fs-title {
+	font-size: 2.1875rem;
+	text-transform: uppercase;
+	color: #2C3E50;
+	margin-bottom: 0.625rem;
+}
+
+.fs-subtitle {
+	font-weight: 600;
+	font-size: 1.5625rem;
+	color: #666;
+	margin-bottom: 1.25rem;
+}
+
+/*progressbar*/
+ul {
+	display: flex;
+	list-style-type: disc;
+	margin-top: 2.125rem;
+	padding-left: 0;
+	/* margin-block-start: 1em; */
+	/* margin-block-end: 1em; */
+	/* margin-inline-start: 9.375rem; */
+	/* margin-inline-end: 0rem; */
+	/* padding-inline-start: 2.5rem; */
+}
+
+#progressbar {
+	background-color: none;
+	margin-bottom: 1.875rem;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+
+#progressbar li {
+	list-style-type: none;
+	color: #212529;
+	text-transform: uppercase;
+	font-size: 1.0625rem;
+	width: 12%;
+	float: left;
+	position: relative;
+}
+
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 1.875rem;
+	line-height: 1.875rem;
+	display: block;
+	font-size: 1.0625rem;
+	color: #333;
+	background: white;
+	border-radius: 0.1875rem;
+	margin: 0 auto 0.3125rem auto;
+}
+
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 0.125rem;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 0.5625rem;
+	z-index: -1;
+	/*put it behind the numbers*/
+}
+
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none;
+}
+
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,
+#progressbar li.active:after {
+	background: #dc3545;
+	color: white;
+}
+
+/* -------------------------------------------------- */
+@media screen and (max-width: 320px){html{font-size: 6px;}#container{height: 70rem; padding: 0;}#msform{width:53rem;}}
+@media screen and (min-width: 321px){html{font-size: 6px;}#container{height: 70rem;}#msform{width:59rem;}}
+@media screen and (min-width: 425px){html{font-size: 6px;}#container{height: 70rem;}}
+@media screen and (min-width: 641px){html{font-size: 10px;}}
+@media screen and (min-width: 1200px){html{font-size: 16px;}}
